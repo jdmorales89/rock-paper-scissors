@@ -1,6 +1,26 @@
 import random
 from ascii_art import choice_visual_dict
 
+def visual_ascii(player1, player2):
+    if player1 == 'r' and player2 == 'r':
+        return choice_visual_dict[0]
+    if player1 == 'r' and player2 == 'p':
+        return choice_visual_dict[1]
+    if player1 == 'r' and player2 == 's':
+        return choice_visual_dict[2]
+    if player1 == 'p' and player2 == 'r':
+        return choice_visual_dict[3]
+    if player1 == 'p' and player2 == 'p':
+        return choice_visual_dict[4]
+    if player1 == 'p' and player2 == 's':
+        return choice_visual_dict[5]
+    if player1 == 's' and player2 == 'r':
+        return choice_visual_dict[6]
+    if player1 == 's' and player2 == 'p':
+        return choice_visual_dict[7]
+    if player1 == 's' and player2 == 's':
+        return choice_visual_dict[8]
+
 def is_win(player, opponent):
     """ Return True if player wins following this rule: r > s, s > p, p > r
 
@@ -33,25 +53,5 @@ def play():
         return '                     You won!\n' 
     else: 
         return '                     You lost!\n'
-        
-def visual_ascii(player1, player2):
-    if player1 == 'r' and player2 == 'r':
-        return choice_visual_dict[0]
-    if player1 == 'r' and player2 == 'p':
-        return choice_visual_dict[1]
-    if player1 == 'r' and player2 == 's':
-        return choice_visual_dict[2]
-    if player1 == 'p' and player2 == 'r':
-        return choice_visual_dict[3]
-    if player1 == 'p' and player2 == 'p':
-        return choice_visual_dict[4]
-    if player1 == 'p' and player2 == 's':
-        return choice_visual_dict[5]
-    if player1 == 's' and player2 == 'r':
-        return choice_visual_dict[6]
-    if player1 == 's' and player2 == 'p':
-        return choice_visual_dict[7]
-    if player1 == 's' and player2 == 's':
-        return choice_visual_dict[8]
 
 print(play())
