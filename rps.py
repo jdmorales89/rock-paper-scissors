@@ -1,6 +1,19 @@
 import random
 from ascii_art import choice_visual_dict
 
+def is_win(player, opponent):
+    """ Return True if player wins following this rule: r > s, s > p, p > r
+
+    Args:
+        player (str): Player's choice
+        opponent (str): Computer's choice
+
+    Returns:
+        [bool]: True if player wins over computer
+    """
+    if (player == 'r' and opponent == 's') or (player == 's' and opponent == 'p') or (player =='p' and opponent == 'r'):
+        return True
+
 def play():
     """ Play Rock, Paper, Scissors game. Ask user for choice and compare it with random choice from the computer
 
@@ -20,19 +33,6 @@ def play():
         return '                     You won!\n' 
     else: 
         return '                     You lost!\n'
-    
-def is_win(player, opponent):
-    """ Return True if player wins following this rule: r > s, s > p, p > r
-
-    Args:
-        player (str): Player's choice
-        opponent (str): Computer's choice
-
-    Returns:
-        [bool]: True if player wins over computer
-    """
-    if (player == 'r' and opponent == 's') or (player == 's' and opponent == 'p') or (player =='p' and opponent == 'r'):
-        return True
         
 def visual_ascii(player1, player2):
     if player1 == 'r' and player2 == 'r':
